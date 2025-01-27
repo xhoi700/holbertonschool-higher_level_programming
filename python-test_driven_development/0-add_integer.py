@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+
+"""Module that contain function that adds two integers"""
+
+
 def add_integer(a, b=98):
+
+    """Func that adds two integers"""
     if not isinstance(a, int) and not isinstance(a, float):
         raise TypeError("a must be an integer")
     if not isinstance(b, int) and not isinstance(b, float):
@@ -8,4 +14,4 @@ def add_integer(a, b=98):
         a = int(a)
     if isinstance(b, float):
         b = int(b)
-    return (a + b)
+    return a + b
