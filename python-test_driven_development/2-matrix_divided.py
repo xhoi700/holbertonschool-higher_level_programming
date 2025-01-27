@@ -1,28 +1,31 @@
 #!/usr/bin/python3
-""" Substracts all cells of a matrix"""
+"""Python program to add 2 integers"""
 
 
 def matrix_divided(matrix, div):
-    """ Takes a matrix and divides every int or float inside it by div
+    """ Function to divide values in a matrix
+
+    Args:
+        matrix (list): a list
+        div (int): divider
+
+    Returns:
+        Divided list.
     """
+    string = "matrix must be a matrix (list of lists) of integers/floats"
     if type(div) not in [int, float]:
-        raise TypeError('div must be a number')
-    if div == 0:
-        raise ZeroDivisionError('division by zero')
-    row_len = len(matrix[0])
-    new_matrix = []
-    for row in matrix:
-        new_row = []
-        if len(row) != row_len:
-            raise TypeError('Each row of the matrix must have the same size')
-        for elem in row:
-            if type(elem) not in [int, float]:
-                raise_err()
-            new_row.append(round(elem / div, 2))
-        new_matrix.append(new_row)
-    return new_matrix
+        raise TypeError("div must be a number")
+    if matrix is list:
+        raise TypeError(string)
+    if not isinstance(matrix[0], list):
+        raise TypeError(string)
+    if not all(isinstance(val, int) or
+               isinstance(val, float) for row in matrix for val in row):
+        raise TypeError(string)
+    if len(matrix) > 1:
+        if all((len(row) != len(matrix[0]) for row in matrix[1:])):
+            raise TypeError("Each row of the matrix must have the same size")
 
+    div_matrix = [[round(value / div, 2) for value in row] for row in matrix]
 
-def raise_err():
-    a = 'matrix must be a matrix (list of lists) of integers/floats'
-    raise TypeError(a)
+    return div_matrix
