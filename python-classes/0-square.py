@@ -1,3 +1,11 @@
 #!/usr/bin/python3
- class Square:
+'''
+    We will create a class named Square
+'''
+
+
+class Square:
+    '''
+        It take no arguments
+    '''
     pass
