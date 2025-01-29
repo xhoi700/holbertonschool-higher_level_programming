@@ -42,15 +42,15 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        milo = ""
+        rect = ""
         if self.__width == 0 or self.__height == 0:
-            return milo
+            return rect
         for i in range(self.__height):
             for j in range(self.__width):
-                milo += "#"
+                rect += "#"
             if i < self.__height - 1:
-                milo += "\n"
-        return milo
+                rect += "\n"
+        return rect
 
     def __repr__(self):
         return f"Rectangle({self.__width}, {self.__height})"
