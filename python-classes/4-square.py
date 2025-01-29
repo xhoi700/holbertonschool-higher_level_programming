@@ -1,27 +1,33 @@
 #!/usr/bin/python3
-'''
-    We will create a class named Square
-'''
+
+
+"""module about a class in python"""
 
 
 class Square:
-    '''
-        Size must be an integer and greater than 0
-    '''
+    """the class Square"""
     def __init__(self, size=0):
-        self.size = size
+        """constructor of the object"""
+        self.__size = size
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+
+    def area(self):
+        """func to calculate area"""
+        return self.__size ** 2
 
     @property
     def size(self):
+        """getter of the property"""
         return self.__size
 
     @size.setter
     def size(self, value):
+        """setter of the value of an attribute"""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-
-    def area(self):
-        return self.__size ** 2
