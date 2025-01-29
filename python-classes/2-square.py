@@ -1,16 +1,15 @@
 #!/usr/bin/python3
-'''
-    We will create a class named Square
-'''
+
+
+"""module about a class in python"""
 
 
 class Square:
-    '''
-        Size must be an integer and greater than 0
-    '''
+    """the class Square"""
     def __init__(self, size=0):
+        """constructor of the object"""
+        self.__size = size
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        self.__size = size
