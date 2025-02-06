@@ -22,7 +22,7 @@ class Shape(ABC):
 class Circle(Shape):
     """Class representing a circle, inheriting from Shape."""
     
-    def __init__(self, radius=0):
+    def __init__(self, radius):
         """
         Initialize a Circle with a given radius.
         
