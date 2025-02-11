@@ -8,4 +8,4 @@ def write_file(filename="", text=""):
     """write a text file (UTF8) and prints it to stdout."""
     with open(filename, "w", encoding="UTF8") as f:
         content = f.write(text)
-        return contains
+        return content
