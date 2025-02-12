@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+'''input/output'''
+
+
 def class_to_json(obj):
-    """returns a obj__dict___"""
+    '''class to json'''
     return obj.__dict__
